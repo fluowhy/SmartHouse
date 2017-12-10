@@ -14,12 +14,12 @@ import pyfirmata
 def estado(value):
 	# determina el estado de una luz
 	if value>0.5: # calcula el estado de la luz
-		state = 'luz encendida'
+		state = 'luz ON'
 	else:
-		state = 'luz apagada'
+		state = 'luz OFF'
 	return state		
 
-port = '/dev/ttyACM3' # puerto donde esta conectado el arduino (hay que cambiarlo dependiendo del pc)
+port = '/dev/ttyACM1' # puerto donde esta conectado el arduino (hay que cambiarlo dependiendo del pc)
 board = pyfirmata.Arduino(port) # crea objeto como arduino en puerto anterior
 
 it = pyfirmata.util.Iterator(board) # para que el buffer no haga overflow
