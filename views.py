@@ -12,16 +12,7 @@ import numpy as np
 
 def hello(request):
 	a = np.genfromtxt('/home/mauricio/Documents/Smart/state', dtype='str')
-	text = ''
-	n = a.shape
-	k = 1
-	for i in a:
-		if k==1:
-			text += '<h1>'+'Light '+i[0]+' '+i[2]+'</br>'
-		elif k!=n[0] and k!=1:
-			text += 'Light '+i[0]+' '+i[2]+'</br>'
-		elif k==n[0]:
-			text += 'Light '+i[0]+' '+i[2]+'</h1>'
-		k += 1		
-	#text = """<h1>Hola Mamá soy LucreciaApp !</br></h1>"""
+	print a
+	text = '<h1>'+'Light '+a[0]+' '+a[2] + '</h1>'+'</br>'+'Última actualización: '+a[3]+' '+a[4]+' '+a[5]+' '+a[6]+' '
+	print text
 	return HttpResponse(text)
